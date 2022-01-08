@@ -1,4 +1,4 @@
-<img alt="Ignite" src=".github/cover-elixir.png" style="max-height: 250px;" />
+<img alt="Ignite" src="https://github.com/msvalandro/reports_generator/blob/master/.github/cover-elixir.png" style="max-height: 250px;" />
 
 # ReportsGenerator
 
