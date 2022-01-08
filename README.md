@@ -6,23 +6,24 @@
 
 This app generates reports when a CSV file is passed. This is a project from [Rocketseat Ignite](https://rocketseat.com.br/)
 
+## Environment
+- Elixir 1.13.0 (compiled with Erlang/OTP 24)
+
 ## Running
-
+* Install Dependencies:
 ```bash
-#install dependencies
 mix deps.get
+```
+* Run tests:
+```
+mix test 
+```
 
-#run tests
-mix test
-
-#start application in interactive mode
+* Start application in interactive mode:
+```
 iex -S mix
 ```
 
-## Environment
 
-- Elixir 1.11.3 (compiled with Erlang/OTP 23)
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
