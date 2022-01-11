@@ -49,11 +49,10 @@ defmodule ReportsGenerator do
            users: users1
          },
          %{
-          foods: foods2,
-          users: users2
+           foods: foods2,
+           users: users2
          }
        ) do
-
     foods = merge_maps(foods1, foods2)
     users = merge_maps(users1, users2)
 
@@ -61,8 +60,7 @@ defmodule ReportsGenerator do
   end
 
   defp merge_maps(map1, map2) do
-    Map.merge(map1, map2, fn _key, value1, value2 -> value1 + value2
-    end)
+    Map.merge(map1, map2, fn _key, value1, value2 -> value1 + value2 end)
   end
 
   defp report_acc do
