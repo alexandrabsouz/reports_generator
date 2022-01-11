@@ -30,7 +30,7 @@ defmodule ReportsGenerator do
   end
 
   def fetch_higher_cost(report, option) when option in @options do
-    Enum.max_by(report[option], fn {_key, value} -> {:ok, value} end)
+    {:ok, Enum.max_by(report[option], fn {_key, value} -> value end)}
   end
 
   # maior valor
