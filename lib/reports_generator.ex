@@ -17,24 +17,22 @@ defmodule ReportsGenerator do
     "foods"
   ]
 
-
   def build(filename) do
     filename
     |> Parser.parse_file()
-    |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report)
-    end)
+    |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report) end)
   end
 
   defp sum_values([id, food_name, price], %{"users" => users, "foods" => foods} = report) do
-    users =  Map.put(users, id, users[id] + price)
-    foods =  Map.put(foods, food_name, foods[food_name] + 1)
+    users = Map.put(users, id, users[id] + price)
+    foods = Map.put(foods, food_name, foods[food_name] + 1)
     %{report | "users" => users, "foods" => foods}
   end
 
-
   def fetch_higher_cost(report, option) when option in @options do
-     Enum.max_by(report[option], fn {_key, value} -> {:ok, value} end)
+    Enum.max_by(report[option], fn {_key, value} -> {:ok, value} end)
   end
+
   # maior valor
 
   def fetch_higher_cost(_report, _option), do: {:error, "inválid option!"}
@@ -45,6 +43,5 @@ defmodule ReportsGenerator do
     %{"users" => users, "foods" => foods}
   end
 end
-
 
 # ReportsGenerator.build("report_test.csv")

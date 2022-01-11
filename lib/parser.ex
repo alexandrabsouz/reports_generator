@@ -1,5 +1,4 @@
 defmodule ReportsGenerator.Parser do
-
   def parse_file(filename) do
     "reports/#{filename}"
     |> File.stream!()
@@ -13,6 +12,5 @@ defmodule ReportsGenerator.Parser do
     |> List.update_at(2, &String.to_integer/1)
   end
 end
-
 
 # ReportsGenerator.build("report_test.csv")
