@@ -18,12 +18,9 @@ defmodule ReportsGenerator do
   ]
 
   def build(filename) do
-    result =
       filename
       |> Parser.parse_file()
       |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report) end)
-
-    {:ok, result}
   end
 
   def build_from_many(filenames) when not is_list(filenames) do
