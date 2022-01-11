@@ -3,7 +3,7 @@ defmodule ReportsGenerator.ParserTest do
 
   alias ReportsGenerator.Parser
 
-  describe "pars/1" do
+  describe "parse_file/1" do
     test "parser the file" do
       file_name = "report_test.csv"
 
