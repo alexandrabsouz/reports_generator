@@ -18,9 +18,9 @@ defmodule ReportsGenerator do
   ]
 
   def build(filename) do
-      filename
-      |> Parser.parse_file()
-      |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report) end)
+    filename
+    |> Parser.parse_file()
+    |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report) end)
   end
 
   def build_from_many(filenames) when not is_list(filenames) do
@@ -51,10 +51,9 @@ defmodule ReportsGenerator do
   def fetch_higher_cost(_report, _option), do: {:error, "inválid option!"}
 
   defp sum_reports(%{"foods" => foods1, "users" => users1}, %{
-      "foods" => foods2,
-      "users" => users2
-    }) do
-
+         "foods" => foods2,
+         "users" => users2
+       }) do
     foods = merge_maps(foods1, foods2)
     users = merge_maps(users1, users2)
 
